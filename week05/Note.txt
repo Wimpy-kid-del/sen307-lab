@@ -1,0 +1,59 @@
+SEN 307 – Week 5 Practical
+Lab 3: Data Definition Language (DDL)
+
+Student Name:Chukwube Daniel Ikechukwu 
+Matric Number:VUG/SEN/24/11434  
+Database Name:sen307_11434
+
+1. Constraint Testing
+
+A. NOT NULL Constraint
+
+SQL Command:
+
+INSERT INTO Department (dept_name) VALUES (NULL);
+
+Expected Result: Error 1048 – Column 'dept_name' cannot be null.
+
+B. CHECK Constraint
+
+SQL Command:
+
+INSERT INTO Course (course_code, course_title, credit_units)
+VALUES ('TST101', 'Test', 9);
+
+Expected Result: Error 3819 – Check constraint was violated.
+
+C. FOREIGN KEY Constraint
+
+SQL Command:
+
+INSERT INTO Student (matric_no, full_name, dept_id)
+VALUES ('TEST001', 'Test', 999);
+
+Expected Result: Error 1452 – Foreign key constraint fails.
+
+D. ENUM Constraint
+
+SQL Command:
+sql
+INSERT INTO Student (matric_no, full_name, gender)
+VALUES ('TEST002', 'Test', 'X');
+
+Expected Result: Error 1265 – Data truncated for gender.
+
+E. UNIQUE Constraint
+
+SQL Command:
+
+INSERT INTO Department (dept_name) VALUES ('UNIQUE_TEST_DEPT');
+
+The UNIQUE constraint was tested by attempting to insert the same department name again. Record the actual result displayed by MySQL.
+
+2. Week 4 and Week 5 Diagram Comparison
+
+The Week 4 diagram showed the planned database structure, while the Week 5 diagram represents the actual tables created in MySQL. The Week 5 diagram shows the six tables, their primary keys, foreign keys and relationships. The Enrolment and CourseAllocation tables connect other tables through their foreign key relationships.
+
+3. Conclusion
+
+The practical involved creating a database schema using SQL DDL commands, defining tables, applying constraints and relationships, and generating an EER diagram using MySQL Workbench.
